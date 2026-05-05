@@ -66,7 +66,7 @@ module top_tb_1_pr;
     // --- SCÉNARIO DE TEST ---
     initial begin
         // Chargement du NOUVEAU programme
-        $readmemh("programs/bin/inst_gr_1_postroute.hex", inst_mem.mem);
+        $readmemh("programs/bin/inst_gr_1_pr.hex", inst_mem.mem);
 
         clk = 0;
         rst = 1;
