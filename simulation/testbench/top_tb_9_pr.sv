@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module top_tb_1_pr;
+module top_tb_9_pr;
 
     `define ASSERT_EQ(name, signal, expected) \
         if ((signal) !== (expected)) begin \
@@ -10,7 +10,7 @@ module top_tb_1_pr;
             $display("   Attendu : %0d (0x%h)", expected, expected); \
             $display("   Obtenu  : %0d (0x%h)", signal, signal); \
             $display("========================================"); \
-            $finish; \
+            $stop; \
         end else begin \
             $display("[OK] %s", name); \
         end
@@ -55,43 +55,35 @@ module top_tb_1_pr;
 
     always #25 clk = ~clk;
 
-
     initial begin
         $sdf_annotate("asic/par/Innovus/RESULTS/design.sdf", dut);
         $display("SDF Annotation terminée.");
     end
 
-
     initial begin
-
-        $readmemh("programs/bin/inst_gr_1_pr.hex", inst_mem.mem);
+        $readmemh("programs/bin/inst_gr_9_pr.hex", inst_mem.mem);
 
         clk = 0;
         rst = 1;
         
         #50 rst = 0;
 
-        #10000000; 
+        #100000; 
 
         $display("--- DEBUT DES VERIFICATIONS POST-ROUTAGE ---");
 
-        // VERIFICATIONS DANS LA DATA MEMORY
-        
-        `ASSERT_EQ("Test ADDI (x5 = 10 à l'index 0)", data_mem.memory[0], 32'd10)
-        `ASSERT_EQ("Test ADDI (x6 = 20 à l'index 1)", data_mem.memory[4], 32'd20)
-        `ASSERT_EQ("Test ADD (x7 = 30 à l'index 2)",  data_mem.memory[8], 32'd30)
-        `ASSERT_EQ("Test SUB (x8 = 10 à l'index 3)",  data_mem.memory[12], 32'd10)
+        `ASSERT_EQ("Test Ultime Fibonacci (a = 5 à l'index 52)", data_mem.memory[52], 32'd5)
 
         $display("");
-        $display("SUCCES TOTAL : Groupe 1 (Post-Routage Validé !)");
+        $display("STRESS TEST PASSED");
         $display("");
         
-        $finish;
+        $stop;
     end
       
     initial begin
-        $dumpfile("top_tb_1_pr.vcd");
-        $dumpvars(0, top_tb_1_pr);  
+        $dumpfile("top_tb_9_pr.vcd");
+        $dumpvars(0, top_tb_9_pr);  
     end
 
 endmodule
