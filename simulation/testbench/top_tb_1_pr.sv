@@ -59,7 +59,7 @@ module top_tb_1_pr;
     // --- ANNOTATION DES DÉLAIS PHYSIQUES ---
     initial begin
         // Change le chemin si nécessaire
-        $sdf_annotate("RISCV-V-32I/asic/par/INNOVUS/RESULTS/design.sdf", dut);
+        $sdf_annotate("asic/par/Innovus/RESULTS/design.sdf", dut);
         $display("SDF Annotation terminée.");
     end
 
