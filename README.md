@@ -77,8 +77,24 @@ This project was developed as part of the engineering curriculum at **Grenoble-I
 ### External Resources
 - [RV32I Introduction - Bit-Spinner](https://www.bit-spinner.com/rv32i/rv32i-introduction): Comprehensive guide on the RV32I instruction set used during the design phase.
 
+### AI Usage Declaration
+Generative AI (Large Language Models) was used as a technical assistant during this project. Its use to:
+- Troubleshooting and explaining specific CAD tool error logs (e.g., Innovus DRC/Timing logs).
+- Assisting with TCL script syntax and tool configuration.
+- Compilation to a hex file
+- Debugging in the broadest sense
+
 ### Academic Institution
 **Grenoble-INP-PHELMA, UGA** *Graduate School of Engineering in Physics, Electronics, Materials Sciences* - Address: 3 Parvis Louis Néel, 38000 Grenoble, France  
 - Website: [http://phelma.grenoble-inp.fr](http://phelma.grenoble-inp.fr/en)
+
+## ⚖️ License & Academic Integrity
+This project is licensed under the **MIT License**.
+
+**Notice to students:**
+This repository is intended for educational purposes and as a portfolio showcase. While you are encouraged to study the code and the implementation flow to aid your understanding of RISC-V and ASIC design, **direct copying of this work for academic assignments is strictly discouraged** and may violate your institution's academic integrity policy. Use this resource to learn, not to circumvent the learning process.
+
+## 🤝 Contributing
+Feel free to fork this project, report issues, or submit pull requests. If you find this repository helpful for your studies at Phelma or elsewhere, a ⭐ is always appreciated!
 
 ---
